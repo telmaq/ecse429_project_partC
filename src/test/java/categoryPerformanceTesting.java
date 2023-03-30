@@ -58,7 +58,8 @@ public class categoryPerformanceTesting {
                         .uri(URI.create(BASE_URL + "categories"))
                         .header("Content-Type", "application/json")
                         .POST(HttpRequest.BodyPublishers.ofString(
-                                "{\"title\": \"Test1\", \"doneStatus\": false, \"description\": \"Test description\"}"))
+                                "{\"id\": " + j
+                                        + ", \"title\": \"Test title\", \"description\": \"Test description\"}"))
                         .build();
             }
 
@@ -68,7 +69,7 @@ public class categoryPerformanceTesting {
                     .uri(URI.create(BASE_URL + "categories"))
                     .header("Content-Type", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(
-                            "{\"title\": \"Test1\", \"doneStatus\": false, \"description\": \"Test description\"}"))
+                            "{\"id\": 1000001, \"title\": \"Test title\", \"description\": \"Test description\"}"))
                     .build();
             long endTimeForAdd = System.nanoTime();
             long durationForAdd = (endTimeForAdd - startTimeForAdd);
@@ -87,7 +88,7 @@ public class categoryPerformanceTesting {
                     .uri(URI.create(BASE_URL + "categories/" + givenId))
                     .header("Content-Type", "application/json")
                     .PUT(HttpRequest.BodyPublishers.ofString(
-                            "{\"title\": \"Test1\", \"doneStatus\": true, \"description\": \"Test description\"}"))
+                            "{\"id\": 1000001, \"title\": \"Test title\", \"description\": \"New test description\"}"))
                     .build();
             long endTimeForUpdate = System.nanoTime();
             long durationForUpdate = (endTimeForUpdate - startTimeForUpdate);
