@@ -17,11 +17,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @TestMethodOrder(OrderAnnotation.class)
-
 public class categoryPerformanceTesting {
-    int numberOfObjects = 100000;
-    int currentIteration = 1;
-
     private static final String BASE_URL = "http://localhost:4567/";
     private Process runTodoManagerRestApi;
     private static int givenId = 0;
@@ -51,35 +47,40 @@ public class categoryPerformanceTesting {
     @Test
     @Order(1)
     public void testAddCategory() throws Exception {
+        HttpClient client = HttpClient.newHttpClient();
+        ObjectMapper objectMapper = new ObjectMapper();
 
         for (int i = 0; i < 11; i++) {
-            for (int j = 0; j < (numberOfObjects * currentIteration); j++) {
-                HttpRequest.newBuilder()
-                        .uri(URI.create(BASE_URL + "categories"))
-                        .header("Content-Type", "application/json")
-                        .POST(HttpRequest.BodyPublishers.ofString(
-                                "{\"id\": " + j
-                                        + ", \"title\": \"Test title\", \"description\": \"Test description\"}"))
-                        .build();
+            // for (int j = 0; j < (numberOfObjects * currentIteration); j++) {
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(BASE_URL + "categories"))
+                    .build();
+            HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+            JsonNode jsonNode = objectMapper.readTree(response.body());
+            JsonNode categoriesNode = jsonNode.get("categories");
+            int count = 0;
+            for (JsonNode categorieNode : categoriesNode) {
+                count++;
             }
+            System.out.println("Number of categories in the system: " + count);
 
             // add a category
             long startTimeForAdd = System.nanoTime();
-            HttpRequest request = HttpRequest.newBuilder()
+            request = HttpRequest.newBuilder()
                     .uri(URI.create(BASE_URL + "categories"))
                     .header("Content-Type", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(
                             "{\"id\": 1000001, \"title\": \"Test title\", \"description\": \"Test description\"}"))
                     .build();
+            response = client.send(request, BodyHandlers.ofString());
             long endTimeForAdd = System.nanoTime();
             long durationForAdd = (endTimeForAdd - startTimeForAdd);
+
             System.out
                     .println("Time taken for add: " + (float) durationForAdd / 1000000 + " ms with "
-                            + (numberOfObjects * currentIteration) + " objects in the system");
-            HttpClient client = HttpClient.newHttpClient();
-            HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode jsonNode = objectMapper.readTree(response.body());
+                            + " ms with " + count + " objects in the system");
+
+            jsonNode = objectMapper.readTree(response.body());
             givenId = jsonNode.get("id").asInt();
 
             // update a category
@@ -90,21 +91,40 @@ public class categoryPerformanceTesting {
                     .PUT(HttpRequest.BodyPublishers.ofString(
                             "{\"id\": 1000001, \"title\": \"Test title\", \"description\": \"New test description\"}"))
                     .build();
+            client.send(request, BodyHandlers.ofString());
             long endTimeForUpdate = System.nanoTime();
             long durationForUpdate = (endTimeForUpdate - startTimeForUpdate);
+
             System.out.println(
                     "Time taken for update: " + (float) durationForUpdate / 1000000 + " ms with "
-                            + (numberOfObjects * currentIteration) + " objects in the system");
+                            + " ms with " + count + " objects in the system");
 
             // delete a category
             long startTimeForDelete = System.nanoTime();
-            HttpRequest.newBuilder().uri(URI.create(BASE_URL + "categories/" + givenId)).DELETE().build();
+            request = HttpRequest.newBuilder()
+                    .uri(URI.create(BASE_URL + "categories/" + givenId))
+                    .DELETE()
+                    .build();
+
+            client.send(request, BodyHandlers.ofString());
             long endTimeForDelete = System.nanoTime();
             long durationForDelete = (endTimeForDelete - startTimeForDelete);
+
             System.out.println(
                     "Time taken for delete: " + (float) durationForDelete / 1000000 + " ms with "
-                            + (numberOfObjects * currentIteration) + " objects in the system");
-            currentIteration++;
+                            + " ms with " + count + " objects in the system");
+
+            for (int j = 0; j < 10000; j++) {
+                HttpRequest httpRequest = HttpRequest.newBuilder()
+                        .uri(URI.create(BASE_URL + "categories"))
+                        .header("Content-Type", "application/json")
+                        .POST(HttpRequest.BodyPublishers.ofString(
+                                "{\"id\": 1000001, \"title\": \"Test title\", \"description\": \"Test description\"}"))
+                        .build();
+
+                client.send(httpRequest, BodyHandlers.ofString());
+            }
+
         }
     }
 }
