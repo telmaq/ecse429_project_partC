@@ -1,0 +1,74 @@
+Starting tests in...
+3
+2
+1
+&Number of categories in the system: 2
+FTime taken for add: 5.022083 ms with  ms with 2 objects in the system
+Starting tests in...
+
+3
+2
+1
+3Time to create Project when 0 instances is: 239500
+3Time to update Project when 0 instances is: 225958
+3Time to delete Project when 0 instances is: 111750
+5Time to create Project when 1000 instances is: 12291
+6Time to update Project when 1000 instances is: 240166
+5Time to delete Project when 1000 instances is: 18416
+4Time to create Project when 2000 instances is: 2708
+5Time to update Project when 2000 instances is: 61417
+5Time to delete Project when 2000 instances is: 29625
+4Time to create Project when 3000 instances is: 3500
+5Time to update Project when 3000 instances is: 22667
+4Time to delete Project when 3000 instances is: 5333
+4Time to create Project when 4000 instances is: 1542
+5Time to update Project when 4000 instances is: 32542
+4Time to delete Project when 4000 instances is: 5459
+4Time to create Project when 5000 instances is: 1459
+5Time to update Project when 5000 instances is: 28042
+4Time to delete Project when 5000 instances is: 9875
+4Time to create Project when 6000 instances is: 1250
+5Time to update Project when 6000 instances is: 23584
+4Time to delete Project when 6000 instances is: 6792
+4Time to create Project when 7000 instances is: 1208
+5Time to update Project when 7000 instances is: 19250
+4Time to delete Project when 7000 instances is: 4667
+4Time to create Project when 8000 instances is: 1250
+5Time to update Project when 8000 instances is: 21084
+4Time to delete Project when 8000 instances is: 4291
+4Time to create Project when 9000 instances is: 1167
+5Time to update Project when 9000 instances is: 15208
+4Time to delete Project when 9000 instances is: 3333
+5Time to create Project when 10000 instances is: 1083
+6Time to update Project when 10000 instances is: 23459
+5Time to delete Project when 10000 instances is: 4042
+5Time to create Project when 11000 instances is: 1125
+6Time to update Project when 11000 instances is: 17458
+5Time to delete Project when 11000 instances is: 4000
+4Time to create Project when 12000 instances is: 917
+6Time to update Project when 12000 instances is: 26916
+5Time to delete Project when 12000 instances is: 4291
+4Time to create Project when 13000 instances is: 958
+6Time to update Project when 13000 instances is: 17667
+5Time to delete Project when 13000 instances is: 6208
+5Time to create Project when 14000 instances is: 1084
+6Time to update Project when 14000 instances is: 32125
+6Time to delete Project when 14000 instances is: 11667
+4Time to create Project when 15000 instances is: 917
+6Time to update Project when 15000 instances is: 19917
+5Time to delete Project when 15000 instances is: 5125
+4Time to create Project when 16000 instances is: 750
+6Time to update Project when 16000 instances is: 13708
+5Time to delete Project when 16000 instances is: 3667
+4Time to create Project when 17000 instances is: 792
+6Time to update Project when 17000 instances is: 19708
+5Time to delete Project when 17000 instances is: 3917
+5Time to create Project when 18000 instances is: 4750
+6Time to update Project when 18000 instances is: 16291
+5Time to delete Project when 18000 instances is: 3958
+4Time to create Project when 19000 instances is: 791
+6Time to update Project when 19000 instances is: 17583
+5Time to delete Project when 19000 instances is: 3375
+4Time to create Project when 20000 instances is: 750
+6Time to update Project when 20000 instances is: 22542
+5Time to delete Project when 20000 instances is: 5750
