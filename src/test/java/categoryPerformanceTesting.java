@@ -70,7 +70,7 @@ public class categoryPerformanceTesting {
                     .uri(URI.create(BASE_URL + "categories"))
                     .header("Content-Type", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(
-                            "{\"id\": 1000001, \"title\": \"Test title\", \"description\": \"Test description\"}"))
+                            "{\"title\": \"Test title\", \"description\": \"Test description\"}"))
                     .build();
             response = client.send(request, BodyHandlers.ofString());
             long endTimeForAdd = System.nanoTime();
@@ -85,11 +85,11 @@ public class categoryPerformanceTesting {
 
             // update a category
             long startTimeForUpdate = System.nanoTime();
-            HttpRequest.newBuilder()
+            request = HttpRequest.newBuilder()
                     .uri(URI.create(BASE_URL + "categories/" + givenId))
                     .header("Content-Type", "application/json")
-                    .PUT(HttpRequest.BodyPublishers.ofString(
-                            "{\"id\": 1000001, \"title\": \"Test title\", \"description\": \"New test description\"}"))
+                    .POST(HttpRequest.BodyPublishers.ofString(
+                            "{\"title\": \"Test title\", \"description\": \"New test description\"}"))
                     .build();
             client.send(request, BodyHandlers.ofString());
             long endTimeForUpdate = System.nanoTime();
@@ -119,7 +119,7 @@ public class categoryPerformanceTesting {
                         .uri(URI.create(BASE_URL + "categories"))
                         .header("Content-Type", "application/json")
                         .POST(HttpRequest.BodyPublishers.ofString(
-                                "{\"id\": 1000001, \"title\": \"Test title\", \"description\": \"Test description\"}"))
+                                "{\"title\": \"Test title\", \"description\": \"Test description\"}"))
                         .build();
 
                 client.send(httpRequest, BodyHandlers.ofString());
