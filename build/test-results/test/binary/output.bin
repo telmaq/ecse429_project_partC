@@ -1,4 +1,5 @@
 Starting tests in...
+<<<<<<< HEAD
 3
 2
 1
@@ -72,3 +73,42 @@
 4Time to create Project when 20000 instances is: 750
 6Time to update Project when 20000 instances is: 22542
 5Time to delete Project when 20000 instances is: 5750
+=======
+
+3
+2
+1
+=Time taken for add: 4.711916 ms with 0 objects in the system
+@Time taken for update: 0.509167 ms with 0 objects in the system
+@Time taken for delete: 0.053084 ms with 0 objects in the system
+@Time taken for add: 0.005625 ms with 1000 objects in the system
+CTime taken for update: 0.133375 ms with 1000 objects in the system
+CTime taken for delete: 0.031875 ms with 1000 objects in the system
+@Time taken for add: 0.003458 ms with 2000 objects in the system
+CTime taken for update: 0.037709 ms with 2000 objects in the system
+CTime taken for delete: 0.005125 ms with 2000 objects in the system
+=Time taken for add: 0.003 ms with 3000 objects in the system
+CTime taken for update: 0.019833 ms with 3000 objects in the system
+CTime taken for delete: 0.004375 ms with 3000 objects in the system
+@Time taken for add: 0.003042 ms with 4000 objects in the system
+CTime taken for update: 0.023375 ms with 4000 objects in the system
+CTime taken for delete: 0.008625 ms with 4000 objects in the system
+@Time taken for add: 0.003208 ms with 5000 objects in the system
+BTime taken for update: 0.02625 ms with 5000 objects in the system
+CTime taken for delete: 0.011917 ms with 5000 objects in the system
+@Time taken for add: 0.004417 ms with 6000 objects in the system
+CTime taken for update: 0.021375 ms with 6000 objects in the system
+CTime taken for delete: 0.005209 ms with 6000 objects in the system
+>Time taken for add: 0.0025 ms with 7000 objects in the system
+CTime taken for update: 0.051833 ms with 7000 objects in the system
+@Time taken for delete: 0.023 ms with 7000 objects in the system
+@Time taken for add: 0.001375 ms with 8000 objects in the system
+BTime taken for update: 0.02025 ms with 8000 objects in the system
+CTime taken for delete: 0.003375 ms with 8000 objects in the system
+@Time taken for add: 0.001167 ms with 9000 objects in the system
+CTime taken for update: 0.045458 ms with 9000 objects in the system
+BTime taken for delete: 0.06775 ms with 9000 objects in the system
+ATime taken for add: 0.001166 ms with 10000 objects in the system
+DTime taken for update: 0.025459 ms with 10000 objects in the system
+DTime taken for delete: 0.030792 ms with 10000 objects in the system
+>>>>>>> victor
