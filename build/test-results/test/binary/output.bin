@@ -1,114 +1,164 @@
 Starting tests in...
-<<<<<<< HEAD
 3
 2
 1
 &Number of categories in the system: 2
-FTime taken for add: 5.022083 ms with  ms with 2 objects in the system
+ETime taken for add: 16.6575 ms with  ms with 2 objects in the system
+ITime taken for update: 3.630542 ms with  ms with 2 objects in the system
+ITime taken for delete: 2.278958 ms with  ms with 2 objects in the system
+*Number of categories in the system: 10002
+HTime taken for add: 1.4825 ms with  ms with 10002 objects in the system
+MTime taken for update: 2.293667 ms with  ms with 10002 objects in the system
+KTime taken for delete: 3.5825 ms with  ms with 10002 objects in the system
+*Number of categories in the system: 20002
+JTime taken for add: 1.143417 ms with  ms with 20002 objects in the system
+MTime taken for update: 2.149792 ms with  ms with 20002 objects in the system
+JTime taken for delete: 4.587 ms with  ms with 20002 objects in the system
+*Number of categories in the system: 30002
+JTime taken for add: 0.630542 ms with  ms with 30002 objects in the system
+MTime taken for update: 9.721333 ms with  ms with 30002 objects in the system
+NTime taken for delete: 22.393583 ms with  ms with 30002 objects in the system
+*Number of categories in the system: 40002
+ITime taken for add: 0.82275 ms with  ms with 40002 objects in the system
+MTime taken for update: 2.326958 ms with  ms with 40002 objects in the system
+KTime taken for delete: 6.4305 ms with  ms with 40002 objects in the system
+*Number of categories in the system: 50002
+JTime taken for add: 0.576708 ms with  ms with 50002 objects in the system
+NTime taken for update: 12.171667 ms with  ms with 50002 objects in the system
+NTime taken for delete: 33.619667 ms with  ms with 50002 objects in the system
+*Number of categories in the system: 60002
+JTime taken for add: 0.466584 ms with  ms with 60002 objects in the system
+MTime taken for update: 9.141041 ms with  ms with 60002 objects in the system
+NTime taken for delete: 20.795876 ms with  ms with 60002 objects in the system
+*Number of categories in the system: 70002
+JTime taken for add: 0.424625 ms with  ms with 70002 objects in the system
+MTime taken for update: 1.213625 ms with  ms with 70002 objects in the system
+MTime taken for delete: 5.856167 ms with  ms with 70002 objects in the system
+*Number of categories in the system: 80002
+JTime taken for add: 0.507333 ms with  ms with 80002 objects in the system
+MTime taken for update: 3.833125 ms with  ms with 80002 objects in the system
+NTime taken for delete: 10.540458 ms with  ms with 80002 objects in the system
+*Number of categories in the system: 90002
+JTime taken for add: 0.417083 ms with  ms with 90002 objects in the system
+NTime taken for update: 10.216917 ms with  ms with 90002 objects in the system
+NTime taken for delete: 24.287624 ms with  ms with 90002 objects in the system
++Number of categories in the system: 100002
+KTime taken for add: 0.476791 ms with  ms with 100002 objects in the system
+OTime taken for update: 14.430625 ms with  ms with 100002 objects in the system
+OTime taken for delete: 32.466335 ms with  ms with 100002 objects in the system
 Starting tests in...
 
 3
 2
 1
-3Time to create Project when 0 instances is: 239500
-3Time to update Project when 0 instances is: 225958
-3Time to delete Project when 0 instances is: 111750
-5Time to create Project when 1000 instances is: 12291
-6Time to update Project when 1000 instances is: 240166
-5Time to delete Project when 1000 instances is: 18416
-4Time to create Project when 2000 instances is: 2708
-5Time to update Project when 2000 instances is: 61417
-5Time to delete Project when 2000 instances is: 29625
-4Time to create Project when 3000 instances is: 3500
-5Time to update Project when 3000 instances is: 22667
-4Time to delete Project when 3000 instances is: 5333
-4Time to create Project when 4000 instances is: 1542
-5Time to update Project when 4000 instances is: 32542
-4Time to delete Project when 4000 instances is: 5459
-4Time to create Project when 5000 instances is: 1459
-5Time to update Project when 5000 instances is: 28042
-4Time to delete Project when 5000 instances is: 9875
-4Time to create Project when 6000 instances is: 1250
-5Time to update Project when 6000 instances is: 23584
-4Time to delete Project when 6000 instances is: 6792
-4Time to create Project when 7000 instances is: 1208
-5Time to update Project when 7000 instances is: 19250
-4Time to delete Project when 7000 instances is: 4667
-4Time to create Project when 8000 instances is: 1250
-5Time to update Project when 8000 instances is: 21084
-4Time to delete Project when 8000 instances is: 4291
-4Time to create Project when 9000 instances is: 1167
-5Time to update Project when 9000 instances is: 15208
-4Time to delete Project when 9000 instances is: 3333
-5Time to create Project when 10000 instances is: 1083
-6Time to update Project when 10000 instances is: 23459
-5Time to delete Project when 10000 instances is: 4042
-5Time to create Project when 11000 instances is: 1125
-6Time to update Project when 11000 instances is: 17458
+2Time to create Project when 0 instances is: 43458
+3Time to update Project when 0 instances is: 130792
+2Time to delete Project when 0 instances is: 48875
+3Time to create Project when 1000 instances is: 959
+5Time to update Project when 1000 instances is: 13625
+4Time to delete Project when 1000 instances is: 4250
+4Time to create Project when 2000 instances is: 1000
+5Time to update Project when 2000 instances is: 14708
+4Time to delete Project when 2000 instances is: 4250
+4Time to create Project when 3000 instances is: 1042
+5Time to update Project when 3000 instances is: 17541
+4Time to delete Project when 3000 instances is: 4708
+4Time to create Project when 4000 instances is: 1000
+5Time to update Project when 4000 instances is: 12958
+4Time to delete Project when 4000 instances is: 8792
+3Time to create Project when 5000 instances is: 959
+5Time to update Project when 5000 instances is: 12791
+4Time to delete Project when 5000 instances is: 3833
+3Time to create Project when 6000 instances is: 958
+5Time to update Project when 6000 instances is: 10792
+4Time to delete Project when 6000 instances is: 3292
+3Time to create Project when 7000 instances is: 875
+5Time to update Project when 7000 instances is: 12167
+4Time to delete Project when 7000 instances is: 3792
+4Time to create Project when 8000 instances is: 1000
+5Time to update Project when 8000 instances is: 14041
+4Time to delete Project when 8000 instances is: 3417
+4Time to create Project when 9000 instances is: 1041
+5Time to update Project when 9000 instances is: 12833
+4Time to delete Project when 9000 instances is: 3834
+5Time to create Project when 10000 instances is: 1000
+6Time to update Project when 10000 instances is: 24875
+5Time to delete Project when 10000 instances is: 6292
+4Time to create Project when 11000 instances is: 917
+6Time to update Project when 11000 instances is: 13292
 5Time to delete Project when 11000 instances is: 4000
-4Time to create Project when 12000 instances is: 917
-6Time to update Project when 12000 instances is: 26916
-5Time to delete Project when 12000 instances is: 4291
+5Time to create Project when 12000 instances is: 1083
+6Time to update Project when 12000 instances is: 12625
+5Time to delete Project when 12000 instances is: 3709
 4Time to create Project when 13000 instances is: 958
-6Time to update Project when 13000 instances is: 17667
-5Time to delete Project when 13000 instances is: 6208
-5Time to create Project when 14000 instances is: 1084
-6Time to update Project when 14000 instances is: 32125
-6Time to delete Project when 14000 instances is: 11667
-4Time to create Project when 15000 instances is: 917
-6Time to update Project when 15000 instances is: 19917
-5Time to delete Project when 15000 instances is: 5125
-4Time to create Project when 16000 instances is: 750
-6Time to update Project when 16000 instances is: 13708
-5Time to delete Project when 16000 instances is: 3667
-4Time to create Project when 17000 instances is: 792
-6Time to update Project when 17000 instances is: 19708
-5Time to delete Project when 17000 instances is: 3917
-5Time to create Project when 18000 instances is: 4750
-6Time to update Project when 18000 instances is: 16291
-5Time to delete Project when 18000 instances is: 3958
-4Time to create Project when 19000 instances is: 791
-6Time to update Project when 19000 instances is: 17583
-5Time to delete Project when 19000 instances is: 3375
-4Time to create Project when 20000 instances is: 750
-6Time to update Project when 20000 instances is: 22542
-5Time to delete Project when 20000 instances is: 5750
-=======
-
-3
-2
-1
-=Time taken for add: 4.711916 ms with 0 objects in the system
-@Time taken for update: 0.509167 ms with 0 objects in the system
-@Time taken for delete: 0.053084 ms with 0 objects in the system
-@Time taken for add: 0.005625 ms with 1000 objects in the system
-CTime taken for update: 0.133375 ms with 1000 objects in the system
-CTime taken for delete: 0.031875 ms with 1000 objects in the system
-@Time taken for add: 0.003458 ms with 2000 objects in the system
-CTime taken for update: 0.037709 ms with 2000 objects in the system
-CTime taken for delete: 0.005125 ms with 2000 objects in the system
-=Time taken for add: 0.003 ms with 3000 objects in the system
-CTime taken for update: 0.019833 ms with 3000 objects in the system
-CTime taken for delete: 0.004375 ms with 3000 objects in the system
-@Time taken for add: 0.003042 ms with 4000 objects in the system
-CTime taken for update: 0.023375 ms with 4000 objects in the system
-CTime taken for delete: 0.008625 ms with 4000 objects in the system
-@Time taken for add: 0.003208 ms with 5000 objects in the system
-BTime taken for update: 0.02625 ms with 5000 objects in the system
-CTime taken for delete: 0.011917 ms with 5000 objects in the system
-@Time taken for add: 0.004417 ms with 6000 objects in the system
-CTime taken for update: 0.021375 ms with 6000 objects in the system
-CTime taken for delete: 0.005209 ms with 6000 objects in the system
->Time taken for add: 0.0025 ms with 7000 objects in the system
-CTime taken for update: 0.051833 ms with 7000 objects in the system
-@Time taken for delete: 0.023 ms with 7000 objects in the system
-@Time taken for add: 0.001375 ms with 8000 objects in the system
-BTime taken for update: 0.02025 ms with 8000 objects in the system
-CTime taken for delete: 0.003375 ms with 8000 objects in the system
-@Time taken for add: 0.001167 ms with 9000 objects in the system
-CTime taken for update: 0.045458 ms with 9000 objects in the system
-BTime taken for delete: 0.06775 ms with 9000 objects in the system
-ATime taken for add: 0.001166 ms with 10000 objects in the system
-DTime taken for update: 0.025459 ms with 10000 objects in the system
-DTime taken for delete: 0.030792 ms with 10000 objects in the system
->>>>>>> victor
+6Time to update Project when 13000 instances is: 10375
+5Time to delete Project when 13000 instances is: 3500
+5Time to create Project when 14000 instances is: 1000
+6Time to update Project when 14000 instances is: 11750
+5Time to delete Project when 14000 instances is: 3792
+4Time to create Project when 15000 instances is: 958
+6Time to update Project when 15000 instances is: 11833
+5Time to delete Project when 15000 instances is: 4208
+4Time to create Project when 16000 instances is: 958
+6Time to update Project when 16000 instances is: 10625
+5Time to delete Project when 16000 instances is: 3167
+4Time to create Project when 17000 instances is: 917
+6Time to update Project when 17000 instances is: 12167
+5Time to delete Project when 17000 instances is: 3667
+5Time to create Project when 18000 instances is: 1125
+6Time to update Project when 18000 instances is: 11208
+5Time to delete Project when 18000 instances is: 3500
+5Time to create Project when 19000 instances is: 1042
+6Time to update Project when 19000 instances is: 11958
+5Time to delete Project when 19000 instances is: 3625
+5Time to create Project when 20000 instances is: 1000
+6Time to update Project when 20000 instances is: 11625
+5Time to delete Project when 20000 instances is: 3459
+Starting tests in...
+3
+2
+1
++Number of todos currently in the system: 2
+>Time taken for add: 13.306125 ms with 2 objects in the system
+@Time taken for update: 2.822584 ms with 2 objects in the system
+@Time taken for delete: 1.605875 ms with 2 objects in the system
+/Number of todos currently in the system: 10002
+>Time taken for add: 1.357 ms with 10002 objects in the system
+CTime taken for update: 4.11375 ms with 10002 objects in the system
+DTime taken for delete: 6.975583 ms with 10002 objects in the system
+/Number of todos currently in the system: 20002
+@Time taken for add: 0.51825 ms with 20002 objects in the system
+CTime taken for update: 4.45625 ms with 20002 objects in the system
+DTime taken for delete: 9.643208 ms with 20002 objects in the system
+/Number of todos currently in the system: 30002
+ATime taken for add: 0.723709 ms with 30002 objects in the system
+DTime taken for update: 5.228542 ms with 30002 objects in the system
+ETime taken for delete: 12.519083 ms with 30002 objects in the system
+/Number of todos currently in the system: 40002
+ATime taken for add: 0.798167 ms with 40002 objects in the system
+DTime taken for update: 1.738083 ms with 40002 objects in the system
+DTime taken for delete: 4.444041 ms with 40002 objects in the system
+/Number of todos currently in the system: 50002
+ATime taken for add: 0.563875 ms with 50002 objects in the system
+ETime taken for update: 12.149208 ms with 50002 objects in the system
+BTime taken for delete: 31.249 ms with 50002 objects in the system
+/Number of todos currently in the system: 60002
+ATime taken for add: 0.489459 ms with 60002 objects in the system
+DTime taken for update: 2.033084 ms with 60002 objects in the system
+DTime taken for delete: 7.257375 ms with 60002 objects in the system
+/Number of todos currently in the system: 70002
+ATime taken for add: 0.798833 ms with 70002 objects in the system
+ETime taken for update: 10.009792 ms with 70002 objects in the system
+CTime taken for delete: 22.6375 ms with 70002 objects in the system
+/Number of todos currently in the system: 80002
+ATime taken for add: 0.511416 ms with 80002 objects in the system
+ETime taken for update: 10.984084 ms with 80002 objects in the system
+ETime taken for delete: 25.342585 ms with 80002 objects in the system
+/Number of todos currently in the system: 90002
+ATime taken for add: 0.456083 ms with 90002 objects in the system
+DTime taken for update: 4.881333 ms with 90002 objects in the system
+CTime taken for delete: 13.6925 ms with 90002 objects in the system
+0Number of todos currently in the system: 100002
+BTime taken for add: 0.505959 ms with 100002 objects in the system
+DTime taken for update: 6.09025 ms with 100002 objects in the system
+FTime taken for delete: 17.870832 ms with 100002 objects in the system
