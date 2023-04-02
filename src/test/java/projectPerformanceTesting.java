@@ -15,6 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class projectPerformanceTesting {
     private final String BASE_URL = "http://localhost:4567/";
     private Process runTodoManagerRestApi;
+    private static int givenId = 0;
 
     @BeforeEach
     public void setUp() throws InterruptedException {
@@ -37,58 +38,88 @@ public class projectPerformanceTesting {
         runTodoManagerRestApi.destroy();
         Thread.sleep(1000);
     }
+
     @Test
-    void testProjectCreate() throws Exception {
-        for (int i = 0; i <= 20; i++) {
-            // Measure time to create
-            long startTimeCreate = System.nanoTime();
+    void testProjectTransactionTime() throws Exception {
+        HttpClient client = HttpClient.newHttpClient();
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        for (int i = 0; i < 11; i++) {
+            // counting number of projects in the system
             HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(BASE_URL + "projects"))
+                    .build();
+            HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+            JsonNode jsonNode = objectMapper.readTree(response.body());
+            JsonNode projectsNode = jsonNode.get("projects");
+            int count = 0;
+            for (JsonNode projectNode : projectsNode) {
+                count++;
+            }
+            System.out.println("Number of projects currently in the system: " + count);
+
+            // add a project
+            long startTimeForAdd = System.nanoTime();
+            request = HttpRequest.newBuilder()
                     .uri(URI.create(BASE_URL + "projects"))
                     .header("Content-Type", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(
-                            "{\"title\": \"Test\", \"completed\": true, \"active\": false, \"description\": \"Testing POST request for project\"}"))
+                            "{\"title\": \"Test1\", \"completed\": false, \"active\": false, \"description\": \"Test description\"}"))
                     .build();
-            long endTimeCreate = System.nanoTime();
-            long durationCreate = endTimeCreate - startTimeCreate;
-            int numberOfProjects = i*1000;
-            System.out.println("Time to create Project when " + numberOfProjects + " instances is: " + durationCreate);
+            response = client.send(request, BodyHandlers.ofString());
+            long endTimeForAdd = System.nanoTime();
+            long durationForAdd = (endTimeForAdd - startTimeForAdd);
 
-            HttpClient client = HttpClient.newHttpClient();
-            HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode jsonNode = objectMapper.readTree(response.body());
-            int createdId = jsonNode.get("id").asInt();
+            System.out
+                    .println("Time taken for add: " + (float) durationForAdd / 1000000
+                            + " ms with " + count + " objects in the system");
 
-            // Measure time to update
-            long startTimeUpdate = System.nanoTime();
-            HttpRequest.newBuilder()
-                    .uri(URI.create(BASE_URL + "projects/" + createdId))
+            jsonNode = objectMapper.readTree(response.body());
+            givenId = jsonNode.get("id").asInt();
+
+            // update a project
+            long startTimeForUpdate = System.nanoTime();
+            request = HttpRequest.newBuilder()
+                    .uri(URI.create(BASE_URL + "projects/" + givenId))
                     .header("Content-Type", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(
-                            "{\"title\": \"Test\", \"completed\": true, \"active\": false, \"description\": \"Testing POST request for project\"}"))
-                    .build();
-            long endTimeUpdate = System.nanoTime();
-            long durationUpdate = endTimeUpdate - startTimeUpdate;
-            System.out.println("Time to update Project when " + numberOfProjects + " instances is: " + durationUpdate);
+                            "{\"title\": \"Test1\", \"completed\": false, \"active\": false, \"description\": \"Test description\"}"))
 
-            // Measure time to delete
-            long startTimeDelete = System.nanoTime();
-            HttpRequest.newBuilder()
-                    .uri(URI.create(BASE_URL + "projects/" + createdId))
+                    .build();
+            client.send(request, BodyHandlers.ofString());
+            long endTimeForUpdate = System.nanoTime();
+            long durationForUpdate = (endTimeForUpdate - startTimeForUpdate);
+
+            System.out.println("Time taken for update: " + (float) durationForUpdate / 1000000
+                    + " ms with " + count + " objects in the system");
+
+            // delete a project
+            long startTimeForDelete = System.nanoTime();
+            request = HttpRequest.newBuilder()
+                    .uri(URI.create(BASE_URL + "projects/" + givenId))
                     .DELETE()
                     .build();
-            long endTimeDelete = System.nanoTime();
-            long durationDelete = endTimeDelete - startTimeDelete;
-            System.out.println("Time to delete Project when " + numberOfProjects + " instances is: " + durationDelete);
 
-            for (int j = 0; j < 1000; j++) {
-                HttpRequest.newBuilder()
+            client.send(request, BodyHandlers.ofString());
+            long endTimeForDelete = System.nanoTime();
+            long durationForDelete = (endTimeForDelete - startTimeForDelete);
+
+            System.out.println("Time taken for delete: " + (float) durationForDelete / 1000000
+                    + " ms with " + count + " objects in the system");
+
+            // add 100000 projects to the system
+            for (int j = 0; j < 10000; j++) {
+                HttpRequest httpRequest = HttpRequest.newBuilder()
                         .uri(URI.create(BASE_URL + "projects"))
                         .header("Content-Type", "application/json")
                         .POST(HttpRequest.BodyPublishers.ofString(
-                                "{\"title\": \"Test\", \"completed\": true, \"active\": false, \"description\": \"Testing POST request for project\"}"))
+                                "{\"title\": \"Test1\", \"completed\": false, \"active\": false, \"description\": \"Test description\"}"))
+
                         .build();
+
+                client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
             }
         }
+
     }
 }
